@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/vagrant/code/webapp/client/app/controllers/saved-searches'
+let g:netrw_dirhist_2='/home/vagrant/code/webapp/client/app/controllers'
+let g:netrw_dirhist_3='/home/vagrant/code/webapp/client/app/templates/saved-searches'
+let g:netrw_dirhist_4='/home/vagrant/code/webapp/client/app/controllers'
+let g:netrw_dirhist_5='/home/vagrant/code/webapp/client/app/templates/components'
+let g:netrw_dirhist_6='/home/vagrant/code/webapp/client/app/routes'
+let g:netrw_dirhist_7='/home/vagrant/code/webapp/client/app/views/ol-map'
+let g:netrw_dirhist_8='/home/vagrant/code/webapp/client/app/views'
