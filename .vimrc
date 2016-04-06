@@ -96,8 +96,10 @@ let mapleader=" "
 
 nmap <leader>k :NERDTreeToggle<CR>
 
-nmap <leader><Right> gt
-nmap <leader><Left> gT
+nmap <leader><Up> :windcmd k<CR>
+nmap <leader><Down> :windcmd j<CR>
+nmap <leader><Right> :windcmd l<CR>
+nmap <leader><Left> :windcmd h<CR>
 
 " Map <C-L> to also turn off seach highlighting
 noremap <C-L> :nohl<CR><C-L>
