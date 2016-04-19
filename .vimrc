@@ -16,7 +16,6 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-" I am going to try this based on a recommendation online.
 " 'hidden' allows for easy switching between multiple files in same window.
 " Allows for re-use of same window for switching between unsaved buffer w/o saving first.
 " and maintains an undo history for multiple files when re-using window.
@@ -28,8 +27,9 @@ set wildmenu
 " Show partial commands in last line of screen
 set showcmd
 
-" Highlight searches. (C-L to temp turn off highlighting)
+" Highlight searches. (<leader>, to temp turn off highlighting)
 set hlsearch
+set incsearch
 
 " Case insensitive search, except when using caps
 set ignorecase
@@ -74,11 +74,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" want 2 spaces for blade.php and 4 for .php
-autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType scss setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType blade setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " Show tabs?
 set list
@@ -88,21 +83,38 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set pastetoggle=<F2>
 
 " Useful mappings:
+let mapleader=" "
+
+" Edit .vimrc in new file
+nmap <leader>ev :tabedit $MYVIMRC<cr>
 
 " Map Y to act like D and C. yank until EOL
 map Y y$
 
-let mapleader=" "
-
 nmap <leader>k :NERDTreeToggle<CR>
 
-nmap <leader><Up> :windcmd k<CR>
-nmap <leader><Down> :windcmd j<CR>
-nmap <leader><Right> :windcmd l<CR>
-nmap <leader><Left> :windcmd h<CR>
+nmap <leader><Up> :wincmd k<CR>
+nmap <leader><Down> :wincmd j<CR>
+nmap <leader><Right> :wincmd l<CR>
+nmap <leader><Left> :wincmd h<CR>
 
 " Map <C-L> to also turn off seach highlighting
-noremap <C-L> :nohl<CR><C-L>
+noremap <leader>, :nohl<CR><C-L>
 
 " Remove Trailing Whitespace in a file
 nnoremap <leader>rtw :%s/\s\+$//e<CR>:w<CR>
+
+"-------------------------- Auto Commands --------------------------
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost .vimrc source %
+augroup END
+
+" want 2 spaces for blade.php and 4 for .php
+augroup indentation
+    autocmd!
+    autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+    autocmd FileType scss setlocal shiftwidth=2 softtabstop=2 expandtab
+    autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
+    autocmd FileType blade setlocal shiftwidth=2 softtabstop=2 expandtab
+augroup END
