@@ -7,6 +7,9 @@ execute pathogen#infect()
 " Attempt to determine type of file based on name and possibly contents.
 filetype plugin indent on
 
+" FISH complains with syntastic. So set the shell used by vim to bash
+set shell=bash
+
 
 
 
@@ -55,6 +58,13 @@ noremap <leader>, :nohl<CR><C-L>
 " Remove Trailing Whitespace in a file
 nnoremap <leader>rtw :%s/\s\+$//e<CR>:w<CR>
 
+" Open CtrlP in BufTag mode.
+" Allows for searching buffer for tags.
+nmap <leader>r :CtrlPBufTag<CR>
+
+" Open CtrlP Most Recently used.
+nmap <leader>e :CtrlPMRUFiles<cr>
+
 
 
 
@@ -79,6 +89,7 @@ nmap <C-L> <C-W><C-L>
 
 
 
+
 "-------------------------- Auto Commands --------------------------
 augroup autosourcing
     autocmd!
@@ -98,8 +109,11 @@ augroup END
 
 
 
-"-------------------------- Syntastic --------------------------
-" Basic Syntastic Settings
+"-------------------------- Plugins --------------------------
+
+"/
+"/ Syntastic
+"/
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -109,6 +123,17 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+"/
+"/ CtrlP
+"/
+" Ignore node_modules, DS_Store, and git
+let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
+
+" Move the CtrlP window.
+" Place at the top, order top to bottom, at least 1, maximum 30, always
+" display 30 columns
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:10'
 
 
 
