@@ -1,5 +1,8 @@
 " My Vim settings.
-" Version 2: Much of this is based off recommendations. Will tweak as I go.
+" Version 4.20: Working with larger projects made me want better file
+" travesal. The Laracasts Vim master has been really helpful with finding the
+" plugins I use.
+
 "-------------------------- Plugins --------------------------
 " Pathogen Needs to be ran first
 execute pathogen#infect()
@@ -36,6 +39,8 @@ set number
 " Highlight line cursor is on.
 set cursorline
 
+set showtabline=2
+
 
 
 
@@ -49,8 +54,6 @@ nmap <leader>ev :tabedit $MYVIMRC<cr>
 " Map Y to act like D and C. yank until EOL
 map Y y$
 
-" Open NERDTree
-nmap <leader>k :NERDTreeToggle<CR>
 
 " Map <leader>, to also turn off seach highlighting
 noremap <leader>, :nohl<CR><C-L>
@@ -136,6 +139,12 @@ let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:10'
 
 
+"/
+"/ CtrlP
+"/
+" Open NERDTree
+nmap <leader>k :NERDTreeToggle<CR>
+let NERDTreeHijackNetrw = 0
 
 
 "-------------------------- Options --------------------------
