@@ -68,6 +68,8 @@ nmap <leader>r :CtrlPBufTag<CR>
 " Open CtrlP Most Recently used.
 nmap <leader>e :CtrlPMRUFiles<cr>
 
+nmap <leader>f :tag<space>
+
 
 
 
