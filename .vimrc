@@ -63,10 +63,10 @@ nnoremap <leader>rtw :%s/\s\+$//e<CR>:w<CR>
 
 " Open CtrlP in BufTag mode.
 " Allows for searching buffer for tags.
-nmap <leader>r :CtrlPBufTag<CR>
+nmap <leader>cpt :CtrlPBufTag<CR>
 
 " Open CtrlP Most Recently used.
-nmap <leader>e :CtrlPMRUFiles<cr>
+nmap <leader>cpr :CtrlPMRUFiles<cr>
 
 nmap <leader>f :tag<space>
 
