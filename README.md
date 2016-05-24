@@ -19,3 +19,6 @@ Mustache-handlebars: https://github.com/mustache/vim-mustache-handlebars
 Vim-Vinegar: https://github.com/tpope/vim-vinegar
 
 CtrlP: https://github.com/ctrlpvim/ctrlp.vim
+
+
+Javascript and ctags is from: https://gist.github.com/tim-smart/199338
