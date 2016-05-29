@@ -20,5 +20,7 @@ Vim-Vinegar: https://github.com/tpope/vim-vinegar
 
 CtrlP: https://github.com/ctrlpvim/ctrlp.vim
 
+Vim-JavaScript: https://github.com/pangloss/vim-javascript
+
 
 Javascript and ctags is from: https://gist.github.com/tim-smart/199338
