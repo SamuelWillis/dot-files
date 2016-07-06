@@ -5,7 +5,7 @@ Settings and plugins I use for vim.
 Pathogen: https://github.com/tpope/vim-pathogen
 
 
-#Visual:
+##Visual:
 Solarized: http://ethanschoonover.com/solarized
 
 Vim-monokai: https://github.com/sickill/vim-monokai
@@ -13,7 +13,7 @@ Vim-monokai: https://github.com/sickill/vim-monokai
 Vim-indentLine: https://github.com/Yggdroot/indentLine
 
 
-#Language Plugins:
+##Language Plugins:
 Syntastic: https://github.com/scrooloose/syntastic
 
 Vim-javascript: https://github.com/pangloss/vim-javascript
@@ -28,7 +28,7 @@ Vim-css-color: https://github.com/skammer/vim-css-color
 
 
 
-#Navigation:
+##Navigation:
 NERDTree: https://github.com/scrooloose/nerdtree
 
 Vim-Vinegar: https://github.com/tpope/vim-vinegar
@@ -38,11 +38,11 @@ CtrlP: https://github.com/ctrlpvim/ctrlp.vim
 Airline: https://github.com/vim-airline/vim-airline
 
 
-#Git:
+##Git:
 Vim-fugitive: https://github.com/tpope/vim-fugitive
 
 
-#Editting and Snippets:
+##Editting and Snippets:
 Vim-surround: https://github.com/tpope/vim-surround
 
 Vim-snipmate: https://github.com/garbas/vim-snipmate
@@ -51,5 +51,5 @@ Vim-repeat: https://github.com/tpope/vim-repeat
 
 
 
-#.ctags:
+##.ctags:
 Javascript and ctags is from: https://gist.github.com/tim-smart/199338
