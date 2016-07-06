@@ -2,6 +2,8 @@
 --exclude=.hg
 --exclude=log
 --exclude=tmp
+--exclude=node_modules
+--exclude=client/dist
 
 --langdef=js
 --langmap=js:.js

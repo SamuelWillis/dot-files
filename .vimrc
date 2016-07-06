@@ -3,11 +3,12 @@
 " travesal. The Laracasts Vim master has been really helpful with finding the
 " plugins I use.
 
-"-------------------------- Plugins --------------------------
+"-------------------------- Pathogen --------------------------
 " Pathogen Needs to be ran first
 execute pathogen#infect()
 
 " Attempt to determine type of file based on name and possibly contents.
+filetype plugin on
 filetype plugin indent on
 
 " FISH complains with syntastic. So set the shell used by vim to bash
@@ -23,7 +24,7 @@ syntax enable
 
 " Colour scheme
 set background=dark
-colorscheme solarized
+colorscheme monokai
 set t_CO=256
 
 " Display cursor position at bottom right.
@@ -39,8 +40,6 @@ set number
 " Highlight line cursor is on.
 set cursorline
 
-set showtabline=2
-
 
 
 
@@ -50,6 +49,8 @@ let mapleader=" "
 
 " Edit .vimrc in new file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
+" Edit snippet files
+nmap <leader>es :tabedit ~/.vim/snippets/
 
 " Map Y to act like D and C. yank until EOL
 map Y y$
@@ -68,7 +69,14 @@ nmap <leader>cpt :CtrlPBufTag<CR>
 " Open CtrlP Most Recently used.
 nmap <leader>cpr :CtrlPMRUFiles<cr>
 
-nmap <leader>f :tag<space>
+" Search the ctags file for a tag
+nmap <leader>tf :tag<space>
+
+" Insert a line below without going into insert.
+nmap <leader>o o<ESC>k
+
+" Insert a line above without going into insert.
+nmap <leader>O O<ESC>j
 
 
 
@@ -85,11 +93,11 @@ nmap <C-J> <C-W><C-J>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
-" More split pane mappings to come.
-" Want to remap:
-"   :b<number>?
-"   <C-W>| (pipe) => makes current pane take up whole screen
-"   <C-W>=  => makes panes equal widths.
+" Makes current pane take up whole screen
+nmap <leader>fs <C-W><bar>
+
+" Makes panes equal widths.
+nmap <leader>sp <C-W>=
 
 
 
@@ -108,6 +116,7 @@ augroup indentation
     autocmd FileType scss setlocal shiftwidth=2 softtabstop=2 expandtab
     autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
     autocmd FileType blade setlocal shiftwidth=2 softtabstop=2 expandtab
+    autocmd FileType hbs setlocal shiftwidth=2 softtabstop=2 expandtab
 augroup END
 
 
@@ -133,27 +142,58 @@ let g:syntastic_check_on_wq = 0
 "/ CtrlP
 "/
 " Ignore node_modules, DS_Store, and git
-let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
-
+let g:ctrlpl_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$|node_modules\DS_Store|node_modules\|client\tmp\',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 " Move the CtrlP window.
 " Place at the top, order top to bottom, at least 1, maximum 30, always
 " display 30 columns
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:10'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:15'
 
 
 "/
-"/ CtrlP
+"/ NERDTree
 "/
 " Open NERDTree
 nmap <leader>k :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw = 0
 
+"/
+"/ IndentLines
+"/
+let g:indentLine_enabled = 0
+nmap <leader>ig :IndentLinesToggle<CR>
+
+"/
+"/ Vim-Javascript
+"/
+let g:javascript_plugin_jsdoc = 1
+
+"/
+"/ Vim-Javascript
+"/
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
+
+"/
+"/ Vim-Airline
+"/
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme = 'jellybeans'
+
+"
+" vim-php-cs-fixer
+"
+let g:php_cs_fixer_level = "psr2"
+
+
+
 
 "-------------------------- Options --------------------------
-" This wards off unexpected things distro might have made and only reset when resourcing .vimrc
 set nocompatible
-set noshowmode
-
 " 'hidden' allows for easy switching between multiple files in same window.
 " Allows for re-use of same window for switching between unsaved buffer w/o saving first.
 " and maintains an undo history for multiple files when re-using window.
@@ -202,7 +242,5 @@ set expandtab
 
 " Show tabs?
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 
-" Paste mode for copy pasting.
-set pastetoggle=<F2>
