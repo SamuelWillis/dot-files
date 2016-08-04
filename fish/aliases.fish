@@ -1,0 +1,7 @@
+alias gd "git diff"
+alias ga "git add"
+alias gaa "git add -A"
+alias gcs "git commit -a -m"
+alias gcm "git commit -m"
+alias gst "git status"
+alias gp "git push"
