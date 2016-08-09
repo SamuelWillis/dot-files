@@ -5,7 +5,7 @@ alias ev "vim ~/.vimrc"
 
 # Quick Sourcing of files
 alias soa "source ~/.config/fish/functions/aliases.fish"
-alias sof "source ~/.config/config.fish"
+alias sof "source ~/.config/fish/config.fish"
 alias sov "source ~/.vimrc"
 
 # Common Commands
