@@ -17,6 +17,7 @@ alias g "git"
 alias gd "git diff"
 alias ga "git add"
 alias gb "git branch"
+alias gf "git fetch"
 alias gp "git push"
 
 alias gaa "git add -A"
@@ -26,11 +27,15 @@ alias gst "git status"
 alias gco "git checkout"
 
 alias gss "git stash"
-alias gsp "git stash pop"
-alias gsl "git stash list"
+alias gssp "git stash pop"
+alias gssl "git stash list"
 
 # navigation
 alias .. "cd ../"
 alias ... "cd ../../"
 alias .... "cd ../../../"
 alias ..... "cd ../../../../"
+
+# DB stuff because I am lazy
+alias devdb "mysql -u homestead -p echosec"
+alias migrate "php artisan migrate --seed -v"

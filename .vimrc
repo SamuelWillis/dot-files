@@ -8,11 +8,12 @@
 execute pathogen#infect()
 
 " Attempt to determine type of file based on name and possibly contents.
+filetype on
 filetype plugin on
 filetype plugin indent on
 
 " FISH complains with syntastic. So set the shell used by vim to bash
-set shell=bash
+set shell=/bin/bash
 
 
 
@@ -39,6 +40,9 @@ set number
 
 " Highlight line cursor is on.
 set cursorline
+
+" italics
+let g:monokai_term_iltalic = 1
 
 
 
@@ -116,7 +120,6 @@ augroup indentation
     autocmd FileType scss setlocal shiftwidth=2 softtabstop=2 expandtab
     autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
     autocmd FileType blade setlocal shiftwidth=2 softtabstop=2 expandtab
-    autocmd FileType hbs setlocal shiftwidth=2 softtabstop=2 expandtab
 augroup END
 
 
@@ -142,14 +145,18 @@ let g:syntastic_check_on_wq = 0
 "/ CtrlP
 "/
 " Ignore node_modules, DS_Store, and git
-let g:ctrlpl_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$|node_modules\DS_Store|node_modules\|client\tmp\',
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$\|log\|tmp$\|node_modules\DS_Store\|node_modules',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 " Move the CtrlP window.
 " Place at the top, order top to bottom, at least 1, maximum 30, always
 " display 30 columns
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:15'
+
 
 
 "/
@@ -184,10 +191,24 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme = 'jellybeans'
 
-"
-" vim-php-cs-fixer
-"
+"/
+"/ vim-php-cs-fixer
+"/
 let g:php_cs_fixer_level = "psr2"
+
+"/
+"/ Vim-mustache
+"/
+let g:mustache_abbreviations = 1
+
+"/
+"/ Fugitive
+"/
+" Mappings to mimic my alias file.
+nmap <leader>g :G
+nmap <leader>gst :Gstatus<cr>
+
+
 
 
 
@@ -235,8 +256,8 @@ set mouse=a
 
 
 " Indentation options
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 

@@ -9,33 +9,27 @@ function thunder
   cd ~/thunder.echosec.dev
 end
 
-# Start up ember and suporvisor processes easily.
-function be
-    bootember
-end
 function bootember
   clear
   sudo supervisorctl start all
   webapp
   cd client/
-  ember build --environment=development --watch
+  ember build --environment=$argv --watch
 end
 
-# Fire up the vagran box easily.
-function bd
-    bootdev
-end
-function bootdev
-    cd ~/Documents/dev-box
-    vagrant up
-    vagrant ssh
+function re
+  rebuildember
 end
 
-# SSH into the dev box easily.
-function ssd
-    sshdev
-end
-function sshdev
-    cd ~/Documents/dev-box
-    vagrant ssh
+function rebuildember
+  webapp
+  cd client/
+  npm install
+  bower install
+  ember build --environment=$argv
+  webapp
+  npm install
+  gulp
+  cd client/
+  ember build --environment=$argv --watch
 end
