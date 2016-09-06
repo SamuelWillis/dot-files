@@ -1,0 +1,32 @@
+snippet get this.get
+	this.get('${1}')${2}
+snippet set this.set
+	this.set('${1}', ${2});
+snippet conset Controller set
+	this.controller.set('${1}', ${2});
+snippet inject Ember.inject.service
+	${1}: Ember.inject.service(),
+snippet comp Ember.computed
+	${1}: Ember.computed(${2}function() {
+		${3}
+	})
+snippet compalias Ember.computed.alias
+	${1}: Ember.computed.alias('${2}'),
+snippet act actions
+	actions: {
+	}
+snippet didtran didTransition
+	didTransition: function() {
+	}
+snippet willtran willTransition
+	willTransition: function() {
+	}
+snippet tranto transitionTo
+	this.transitionTo('${1}');
+snippet rendtemp renderInto
+	renderTemplate: function() {
+		this.render({
+			${1}
+		});
+	}
+
