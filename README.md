@@ -22,22 +22,22 @@ Solarized
 
 ## Navigation:
 
-NERDTree: https://github.com/scrooloose/nerdtree
+- NERDTree
 
-CtrlP: https://github.com/ctrlpvim/ctrlp.vim
+- CtrlP
 
-Vim-Vinegar: https://github.com/tpope/vim-vinegar
+- Vim-Vinegar
 
-Airline: https://github.com/vim-airline/vim-airline
+- Airline
 
 
-##Git:
+## Git:
 
-Vim-fugitive: https://github.com/tpope/vim-fugitive
+- Vim-fugitive
 
 
 ## Niceties:
 
-Vim-surround: https://github.com/tpope/vim-surround
+- Vim-surround
 
-Vim-repeat: https://github.com/tpope/vim-repeat
+- Vim-repeat
