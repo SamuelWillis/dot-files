@@ -35,7 +35,3 @@ alias .. "cd ../"
 alias ... "cd ../../"
 alias .... "cd ../../../"
 alias ..... "cd ../../../../"
-
-# DB stuff because I am lazy
-alias devdb "mysql -u homestead -p echosec"
-alias migrate "php artisan migrate --seed -v"

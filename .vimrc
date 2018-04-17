@@ -1,23 +1,10 @@
 " My Vim settings.
-" Version 4.20: Working with larger projects made me want better file
+" Version 6.66: Working with larger projects made me want better file
 " travesal. The Laracasts Vim master has been really helpful with finding the
 " plugins I use.
 
-"-------------------------- Pathogen --------------------------
-" Pathogen Needs to be ran first
+" Fire up pathogen
 execute pathogen#infect()
-
-" Attempt to determine type of file based on name and possibly contents.
-filetype on
-filetype plugin on
-filetype plugin indent on
-
-" FISH complains with syntastic. So set the shell used by vim to bash
-set shell=/bin/bash
-
-
-
-
 
 "-------------------------- Visuals --------------------------
 " Syntax highlighting
@@ -25,7 +12,7 @@ syntax enable
 
 " Colour scheme
 set background=dark
-colorscheme monokai
+colorscheme solarized
 set t_CO=256
 
 " Display cursor position at bottom right.
@@ -41,10 +28,6 @@ set number
 " Highlight line cursor is on.
 set cursorline
 
-" italics
-let g:monokai_term_iltalic = 1
-
-
 
 
 
@@ -59,19 +42,11 @@ nmap <leader>es :tabedit ~/.vim/snippets/
 " Map Y to act like D and C. yank until EOL
 map Y y$
 
-
 " Map <leader>, to also turn off seach highlighting
 noremap <leader>, :nohl<CR><C-L>
 
 " Remove Trailing Whitespace in a file
 nnoremap <leader>rtw :%s/\s\+$//e<CR>:w<CR>
-
-" Open CtrlP in BufTag mode.
-" Allows for searching buffer for tags.
-nmap <leader>cpt :CtrlPBufTag<CR>
-
-" Open CtrlP Most Recently used.
-nmap <leader>cpr :CtrlPMRUFiles<cr>
 
 " Search the ctags file for a tag
 nmap <leader>tf :tag<space>
@@ -81,7 +56,6 @@ nmap <leader>o o<ESC>k
 
 " Insert a line above without going into insert.
 nmap <leader>O O<ESC>j
-
 
 
 
@@ -107,40 +81,7 @@ nmap <leader>sp <C-W>=
 
 
 
-"-------------------------- Auto Commands --------------------------
-augroup autosourcing
-    autocmd!
-    autocmd BufWritePost .vimrc source %
-augroup END
-
-" want 2 spaces for blade.php and 4 for .php
-augroup indentation
-    autocmd!
-    autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
-    autocmd FileType scss setlocal shiftwidth=2 softtabstop=2 expandtab
-    autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
-    autocmd FileType blade setlocal shiftwidth=2 softtabstop=2 expandtab
-augroup END
-
-
-
-
-
 "-------------------------- Plugins --------------------------
-
-"/
-"/ Syntastic
-"/
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-
 "/
 "/ CtrlP
 "/
@@ -156,8 +97,12 @@ let g:ctrlp_custom_ignore = {
 " Place at the top, order top to bottom, at least 1, maximum 30, always
 " display 30 columns
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:15'
+" Open CtrlP in BufTag mode.
+" Allows for searching buffer for tags.
+nmap <leader>cpt :CtrlPBufTag<CR>
 
-
+" Open CtrlP Most Recently used.
+nmap <leader>cpr :CtrlPMRUFiles<cr>
 
 "/
 "/ NERDTree
@@ -165,23 +110,8 @@ let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:15'
 " Open NERDTree
 nmap <leader>k :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw = 0
-
-"/
-"/ IndentLines
-"/
-let g:indentLine_enabled = 0
-nmap <leader>ig :IndentLinesToggle<CR>
-
-"/
-"/ Vim-Javascript
-"/
-let g:javascript_plugin_jsdoc = 1
-
-"/
-"/ Vim-Javascript
-"/
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowBookmarks=1
 
 "/
 "/ Vim-Airline
@@ -189,17 +119,12 @@ let g:monokai_gui_italic = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'solarized'
 
 "/
-"/ vim-php-cs-fixer
+"/ ALE - Syntax linting.
 "/
-let g:php_cs_fixer_level = "psr2"
-
-"/
-"/ Vim-mustache
-"/
-let g:mustache_abbreviations = 1
+let g:airline#extensions#ale#enabled = 1
 
 "/
 "/ Fugitive
@@ -211,10 +136,14 @@ nmap <leader>gst :Gstatus<cr>
 
 
 
-
-
 "-------------------------- Options --------------------------
+" Attempt to determine type of file based on name and possibly contents.
+filetype on
+filetype plugin on
+filetype plugin indent on
+
 set nocompatible
+
 " 'hidden' allows for easy switching between multiple files in same window.
 " Allows for re-use of same window for switching between unsaved buffer w/o saving first.
 " and maintains an undo history for multiple files when re-using window.
@@ -251,10 +180,6 @@ set t_vb=
 " Enable mouse
 set mouse=a
 
-" Set command window height to 2 lines
-" set cmdheight=1
-
-
 " Indentation options
 set shiftwidth=2
 set softtabstop=2
@@ -265,3 +190,29 @@ set expandtab
 set list
 set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 
+
+
+
+"-------------------------- Auto Commands --------------------------
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost .vimrc source %
+augroup END
+
+" want 2 spaces for blade.php and 4 for .php
+augroup indentation
+    autocmd!
+    autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+    autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
+    autocmd FileType scss setlocal shiftwidth=2 softtabstop=2 expandtab
+    autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
+    autocmd FileType blade setlocal shiftwidth=4 softtabstop=4 expandtab
+    autocmd FileType snippets setlocal shiftwidth=4 softtabstop=4
+augroup END
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL 
