@@ -1,0 +1,19 @@
+snippet desc 'describe test'
+	describe('${1:description}', () => {
+		${0}
+	});
+snippet test 'write a test'
+	test('${1:test description}', () => {
+		${0}
+	});
+snippet bef 'beforeEach'
+	beforeEach(() => {
+		${0}
+	});
+snippet exp 'expect'
+	expect(${1})
+		${0}
+snippet shal 'shallow wrapper'
+	const wrapper = shallow(${1}, {
+		${0}
+	});
