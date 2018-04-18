@@ -41,3 +41,7 @@ Solarized
 - Vim-surround
 
 - Vim-repeat
+
+## TODO 
+
+ - Add submodules (?) for a pull and go style
