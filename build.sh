@@ -100,3 +100,6 @@ else
   echo Installing vim-javascript.
     git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 fi
+
+echo Copying vimrc over.
+cp vimrc ~/.vimrc
