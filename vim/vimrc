@@ -3,9 +3,6 @@
 " travesal. The Laracasts Vim master has been really helpful with finding the
 " plugins I use.
 
-" Fire up pathogen
-execute pathogen#infect()
-
 "-------------------------- Visuals --------------------------
 " Syntax highlighting
 syntax enable
@@ -13,7 +10,6 @@ syntax enable
 " Colour scheme
 set background=dark
 colorscheme solarized
-set t_CO=256
 
 " Display cursor position at bottom right.
 set ruler
@@ -23,7 +19,7 @@ set hlsearch
 set incsearch
 
 " Line numbers
-set number
+:set number
 
 " Highlight line cursor is on.
 set cursorline
@@ -116,15 +112,9 @@ let NERDTreeShowBookmarks=1
 "/
 "/ Vim-Airline
 "/
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme = 'solarized'
-
-"/
-"/ ALE - Syntax linting.
-"/
-let g:airline#extensions#ale#enabled = 1
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 
 "/
 "/ Fugitive

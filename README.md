@@ -1,47 +1,45 @@
-# vim
+# Dot Files
 
-Settings and plugins I use for vim.
+Settings and dot files I use for development.
 
+## Installation:
 
-## Plugin Manager
+Clone this repo with the `--recurse-submodules`.
 
-- Pathogen
+## Vim
 
+I use the vim 8 package manager to load packages.
 
-## Visual:
+### Set up
 
-Solarized
+After cloning this repo, set up a symlink for the `vim/` and `vimrc`.
 
+- `ln -sf <path to>/dot-files/vim ~/.vim`
+- `ln -sf <path-to>/dot-files/vim/vimrc ~/.vimrc`
 
-## Language Plugins:
+### Plugins:
+Here are the plugins I use:
 
-- ALE
-- Vim-javascript
-- Vim-Vue
+#### Visual
 
+- [Solarized8](https://github.com/lifepillar/vim-solarized8.git)
 
-## Navigation:
+#### Navigation:
 
-- NERDTree
+- [NERDTree](https://github.com/preservim/nerdtree.git)
+- [CtrlP](https://github.com/kien/ctrlp.vim.git)
+- [Vim-Vinegar](https://github.com/tpope/vim-vinegar.git)
+- [Lightline](https://github.com/itchyny/lightline.vim)
 
-- CtrlP
+#### Niceties:
 
-- Vim-Vinegar
+- [Vim-Surround](https://tpope.io/vim/surround.git)
+- [Vim-Repeat](https://tpope.io/vim/repeat.git)
 
-- Airline
+#### Git:
 
+- [Vim-fugitive](https://tpope.io/vim/fugitive.git)
 
-## Git:
+#### Language Plugins:
 
-- Vim-fugitive
-
-
-## Niceties:
-
-- Vim-surround
-
-- Vim-repeat
-
-## TODO 
-
- - Add submodules (?) for a pull and go style
+- [ALE](https://github.com/dense-analysis/ale.git)
