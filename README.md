@@ -43,3 +43,4 @@ Here are the plugins I use:
 #### Language Plugins:
 
 - [ALE](https://github.com/dense-analysis/ale.git)
+- [Elixir](https://github.com/elixir-editors/vim-elixir.git)

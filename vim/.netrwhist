@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/samuelwillis/GitHub/dot-files'
+let g:netrw_dirhist_2='/Users/samuelwillis/GitHub/dot-files/vim'
+let g:netrw_dirhist_1='/Users/samuelwillis/GitHub/dot-files'
