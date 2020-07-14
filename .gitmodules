@@ -1,9 +1,6 @@
 [submodule "vim/pack/samuelwillis/start/lightline"]
 	path = vim/pack/samuelwillis/start/lightline
 	url = https://github.com/itchyny/lightline.vim
-[submodule "vim/pack/samuelwillis/opt/solarized8"]
-	path = vim/pack/samuelwillis/opt/solarized8
-	url = https://github.com/lifepillar/vim-solarized8.git
 [submodule "vim/pack/samuelwillis/start/nerdtree"]
 	path = vim/pack/samuelwillis/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git

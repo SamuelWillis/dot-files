@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/samuelwillis/GitHub/dot-files'
+let g:netrw_dirhist_6='/Users/samuelwillis/Programming/elixir-learning/elixir-in-action'
+let g:netrw_dirhist_5='/Users/samuelwillis/Programming/elixir-learning/notes.md'
+let g:netrw_dirhist_4='/Users/samuelwillis/Programming/elixir-learning'
 let g:netrw_dirhist_3='/Users/samuelwillis/GitHub/dot-files'
 let g:netrw_dirhist_2='/Users/samuelwillis/GitHub/dot-files/vim'
 let g:netrw_dirhist_1='/Users/samuelwillis/GitHub/dot-files'
