@@ -28,3 +28,9 @@
 [submodule "vim/pack/samuelwillis/start/vim-elixir"]
 	path = vim/pack/samuelwillis/start/vim-elixir
 	url = https://github.com/elixir-editors/vim-elixir.git
+[submodule "vim/pack/samuelwillis/start/vim-markdown"]
+	path = vim/pack/samuelwillis/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/pack/samuelwillis/start/vim-markdown-preview"]
+	path = vim/pack/samuelwillis/start/vim-markdown-preview
+	url = https://github.com/JamshedVesuna/vim-markdown-preview.git

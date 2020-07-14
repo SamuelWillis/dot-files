@@ -123,6 +123,15 @@ let g:lightline = {
 nmap <leader>g :G
 nmap <leader>gst :Gstatus<cr>
 
+"/
+"/ Vim Markdown
+"/
+let g:vim_markdown_folding_disabled=1
+
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Google Chrome'
+
 
 
 

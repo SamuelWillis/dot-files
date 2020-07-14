@@ -44,3 +44,5 @@ Here are the plugins I use:
 
 - [ALE](https://github.com/dense-analysis/ale.git)
 - [Elixir](https://github.com/elixir-editors/vim-elixir.git)
+- [Markdown](https://github.com/plasticboy/vim-markdown.git)
+- [Markdown Previews](https://github.com/JamshedVesuna/vim-markdown-preview.git)
