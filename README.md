@@ -33,6 +33,7 @@ Here are the plugins I use:
 
 #### Niceties:
 
+- [Vim-Test](https://github.com/vim-test/vim-test)
 - [Vim-Surround](https://tpope.io/vim/surround.git)
 - [Vim-Repeat](https://tpope.io/vim/repeat.git)
 
