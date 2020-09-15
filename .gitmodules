@@ -43,3 +43,6 @@
 [submodule "vim/pack/samuelwillis/start/vim-endwise"]
 	path = vim/pack/samuelwillis/start/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "vim/pack/samuelwillis/start/vim-abolish"]
+	path = vim/pack/samuelwillis/start/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
