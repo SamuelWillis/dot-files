@@ -39,6 +39,7 @@ Here are the plugins I use:
 - [Vim-Endwise](https://github.com/tpope/vim-endwise)
 - [Vim-Surround](https://tpope.io/vim/surround.git)
 - [Vim-Repeat](https://tpope.io/vim/repeat.git)
+- [Vim-Abolish](https://github.com/tpope/vim-abolish.git)
 
 #### Git:
 

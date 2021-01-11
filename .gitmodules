@@ -46,3 +46,18 @@
 [submodule "vim/pack/samuelwillis/start/vim-abolish"]
 	path = vim/pack/samuelwillis/start/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/pack/samuelwillis/start/vim-graphql"]
+	path = vim/pack/samuelwillis/start/vim-graphql
+	url = https://github.com/jparise/vim-graphql.git
+[submodule "vim/pack/samuelwillis/start/vim-yaml"]
+	path = vim/pack/samuelwillis/start/vim-yaml
+	url = https://github.com/stephpy/vim-yaml.git
+[submodule "vim/pack/samuelwillis/start/typescript-vim"]
+	path = vim/pack/samuelwillis/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/pack/samuelwillis/start/vim-jsx-typescript"]
+	path = vim/pack/samuelwillis/start/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript.git
+[submodule "vim/pack/samuelwillis/start/vim-terraform"]
+	path = vim/pack/samuelwillis/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git

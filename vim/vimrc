@@ -1,4 +1,4 @@
-" My Vim settings.
+" My Vim settings
 " Version 6.66: Working with larger projects made me want better file
 " travesal. The Laracasts Vim master has been really helpful with finding the
 " plugins I use.
@@ -26,6 +26,7 @@ set cursorline
 
 " Set tags file
 set tags=tags
+set textwidth=80
 
 
 
@@ -85,6 +86,7 @@ nmap <leader>sp <C-W>=
 "/ CtrlP
 "/
 " Ignore node_modules, DS_Store, and git
+let g:ctrlp_extensions = ['tag']
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
 endif
@@ -96,6 +98,11 @@ let g:ctrlp_custom_ignore = {
 " Place at the top, order top to bottom, at least 1, maximum 30, always
 " display 30 columns
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:15'
+let g:ctrlp_buftag_types = {
+    \ 'erlang'     : '--language-force=erlang --erlang-types=drmf',
+    \ 'elixir'     : '--language-force=elixir --elixir-types=drmf',
+    \ }
+
 " Open CtrlP in BufTag mode.
 " Allows for searching buffer for tags.
 nmap <leader>cpt :CtrlPBufTag<CR>
@@ -111,6 +118,7 @@ nmap <leader>k :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw = 0
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
+let g:NERDTreeWinSize=40
 
 "/
 "/ Vim-Airline
@@ -138,24 +146,29 @@ let vim_markdown_preview_browser='Google Chrome'
 "/
 "/ ALE
 "/
+let g:ale_fix_on_save=1
 let g:ale_completion_enabled=1
 
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'elixir': ['elixir-ls'],
+\   'javascript': ['eslint', 'prettier'],
+\   'css': ['eslint', 'prettier'],
+\   'elixir': ['elixir-ls', 'credo'],
 \}
 
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
+\   'elixir': ['mix_format'],
 \}
 
 " Required, tell ALE where to find Elixir LS
 let g:ale_elixir_elixir_ls_release = expand("~/GitHub/elixir-ls/rel")
 
+let g:ale_java_javac_classpath = "$CLASSPATH:~/algs4/algs4.jar"
+
 nnoremap <leader>adt :ALEGoToDefinition<cr>
 nnoremap <leader>adh :ALEHover<cr>
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
+nmap <silent> <leader>af :ALEFix<cr>
 
 "/
 "/ Vim-Test
