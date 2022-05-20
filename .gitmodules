@@ -61,3 +61,6 @@
 [submodule "vim/pack/samuelwillis/start/vim-terraform"]
 	path = vim/pack/samuelwillis/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule "vim/pack/samuelwillis/start/vim-two-firewatch"]
+	path = vim/pack/samuelwillis/start/vim-two-firewatch
+	url = git@github.com:rakr/vim-two-firewatch.git

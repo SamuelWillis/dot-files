@@ -1,5 +1,5 @@
-" My Vim settings
-" Version 6.66: Working with larger projects made me want better file
+" My Vim settings Version 6.66: Working with larger projects made me want better
+" file
 " travesal. The Laracasts Vim master has been really helpful with finding the
 " plugins I use.
 
@@ -8,8 +8,8 @@
 syntax enable
 
 " Colour scheme
-set background=dark
 colorscheme solarized
+set background=light
 
 " Display cursor position at bottom right.
 set ruler
@@ -25,7 +25,7 @@ set number
 set cursorline
 
 " Set tags file
-set tags=tags
+set tags=tags;/
 set textwidth=80
 
 
@@ -115,6 +115,7 @@ nmap <leader>cpr :CtrlPMRUFiles<cr>
 "/
 " Open NERDTree
 nmap <leader>k :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
 let NERDTreeHijackNetrw = 0
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
@@ -166,6 +167,7 @@ let g:ale_java_javac_classpath = "$CLASSPATH:~/algs4/algs4.jar"
 
 nnoremap <leader>adt :ALEGoToDefinition<cr>
 nnoremap <leader>adh :ALEHover<cr>
+nnoremap <leader>add :ALEDetail<cr>
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
 nmap <silent> <leader>af :ALEFix<cr>
