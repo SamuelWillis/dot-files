@@ -20,28 +20,28 @@ After cloning this repo, set up a symlink for the `vim/` and `vimrc`.
 - `ln -sf <path-to>/dot-files/vim/vimrc ~/.vimrc`
 
 
-### Plugins:
+### Plugins
 Here are the plugins I use:
 
 #### Visual
 
 - [Solarized8](https://github.com/lifepillar/vim-solarized8.git)
 
-#### Navigation:
+#### Navigation
 
 - [NERDTree](https://github.com/preservim/nerdtree.git)
 - [CtrlP](https://github.com/kien/ctrlp.vim.git)
 - [Vim-Vinegar](https://github.com/tpope/vim-vinegar.git)
 - [Lightline](https://github.com/itchyny/lightline.vim)
 
-#### Niceties:
+#### Niceties
 
 - [Vim-Endwise](https://github.com/tpope/vim-endwise)
 - [Vim-Surround](https://tpope.io/vim/surround.git)
 - [Vim-Repeat](https://tpope.io/vim/repeat.git)
 - [Vim-Abolish](https://github.com/tpope/vim-abolish.git)
 
-#### Git:
+#### Git
 
 - [Vim-fugitive](https://tpope.io/vim/fugitive.git)
 
@@ -53,7 +53,7 @@ Here are the plugins I use:
 
 - [Vim-Test](https://github.com/vim-test/vim-test)
 
-#### Language Plugins:
+#### Language Plugins
 
 - [ALE](https://github.com/dense-analysis/ale.git)
 - [Elixir](https://github.com/elixir-editors/vim-elixir.git)
