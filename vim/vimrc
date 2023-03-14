@@ -156,6 +156,7 @@ let g:ale_linters = {
 \   'css': ['eslint', 'prettier'],
 \   'elixir': ['elixir-ls', 'credo'],
 \   'python': ['pylint'],
+\   'yml': ['yamllint'],
 \}
 
 let g:ale_fixers = {
