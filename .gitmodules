@@ -16,9 +16,6 @@
 [submodule "vim/pack/samuelwillis/start/repeat.vim"]
 	path = vim/pack/samuelwillis/start/repeat.vim
 	url = https://tpope.io/vim/repeat.git
-[submodule "vim/pack/samuelwillis/start/vim-fugitive"]
-	path = vim/pack/samuelwillis/start/vim-fugitive
-	url = https://tpope.io/vim/fugitive.git
 [submodule "vim/pack/samuelwillis/start/ale"]
 	path = vim/pack/samuelwillis/start/ale
 	url = https://github.com/dense-analysis/ale.git
