@@ -1,9 +1,4 @@
-" My Vim settings Version 6.66: Working with larger projects made me want better
-" file
-" travesal. The Laracasts Vim master has been really helpful with finding the
-" plugins I use.
-
-"-------------------------- Visuals --------------------------
+"--- Visuals ---
 " Syntax highlighting
 syntax enable
 
@@ -25,13 +20,10 @@ set number
 set cursorline
 
 " Set tags file
-set tags=tags;/
+set tags=./tags,tags;$HOME
 set textwidth=80
 
-
-
-
-"-------------------------- Mappings --------------------------
+"--- Mappings ---
 let mapleader=" "
 
 " Edit .vimrc in new file
@@ -57,10 +49,7 @@ nmap <leader>o o<ESC>k
 " Insert a line above without going into insert.
 nmap <leader>O O<ESC>j
 
-
-
-
-"-------------------------- Split Management --------------------------
+"--- Split Management ---
 " Splits default to below and to right.
 set splitbelow
 set splitright
@@ -77,120 +66,7 @@ nmap <leader>fs <C-W><bar>
 " Makes panes equal widths.
 nmap <leader>sp <C-W>=
 
-
-
-
-
-"-------------------------- Plugins --------------------------
-"/
-"/ CtrlP
-"/
-" Ignore node_modules, DS_Store, and git
-let g:ctrlp_extensions = ['tag']
-if exists("g:ctrlp_user_command")
-  unlet g:ctrlp_user_command
-endif
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-let g:ctrlp_user_command = [
-    \ '.git', 'cd %s && git ls-files . -co --exclude-standard',
-    \ 'find %s -type f'
-    \ ]
-" Move the CtrlP window.
-" Place at the top, order top to bottom, at least 1, maximum 30, always
-" display 30 columns
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:15'
-let g:ctrlp_buftag_types = {
-    \ 'erlang'     : '--language-force=erlang --erlang-types=drmf',
-    \ 'elixir'     : '--language-force=elixir --elixir-types=drmf',
-    \ }
-
-" Open CtrlP in BufTag mode.
-" Allows for searching buffer for tags.
-nmap <leader>cpt :CtrlPBufTag<CR>
-
-" Open CtrlP Most Recently used.
-nmap <leader>cpr :CtrlPMRUFiles<cr>
-
-"/
-"/ NERDTree
-"/
-" Open NERDTree
-nmap <leader>k :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
-let NERDTreeHijackNetrw = 0
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowBookmarks=1
-let g:NERDTreeWinSize=40
-
-"/
-"/ Vim-Airline
-"/
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
-
-"/
-"/ Fugitive
-"/
-" Mappings to mimic my alias file.
-nmap <leader>g :G
-nmap <leader>gst :Gstatus<cr>
-
-"/
-"/ Vim Markdown
-"/
-let g:vim_markdown_folding_disabled=1
-
-let vim_markdown_preview_github=1
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_browser='Google Chrome'
-
-"/
-"/ ALE
-"/
-let g:ale_fix_on_save=1
-let g:ale_completion_enabled=1
-
-let g:ale_linters = {
-\   'javascript': ['eslint', 'prettier'],
-\   'css': ['eslint', 'prettier'],
-\   'elixir': ['elixir-ls', 'credo'],
-\   'python': ['pylint'],
-\   'yml': ['yamllint'],
-\}
-
-let g:ale_fixers = {
-\   'elixir': ['mix_format'],
-\   'python': ['autopep8'],
-\   'ruby': ['standardrb'],
-\}
-
-" Required, tell ALE where to find Elixir LS
-let g:ale_elixir_elixir_ls_release = expand("~/GitHub/elixir-ls/rel")
-
-let g:ale_java_javac_classpath = "$CLASSPATH:~/algs4/algs4.jar"
-
-nnoremap <leader>adt :ALEGoToDefinition<cr>
-nnoremap <leader>adh :ALEHover<cr>
-nnoremap <leader>add :ALEDetail<cr>
-nmap <silent> <leader>aj :ALENext<cr>
-nmap <silent> <leader>ak :ALEPrevious<cr>
-nmap <silent> <leader>af :ALEFix<cr>
-
-"/
-"/ Vim-Test
-"/
-nmap <silent> <leader>tn :TestNearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>ts :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tg :TestVisit<CR>
-
-
-
-
-
-"-------------------------- Options --------------------------
+"--- Options ---
 " Attempt to determine type of file based on name and possibly contents.
 filetype on
 filetype plugin on
@@ -244,10 +120,7 @@ set expandtab
 set list
 set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 
-
-
-
-"-------------------------- Auto Commands --------------------------
+"--- Auto Commands ---
 augroup autosourcing
     autocmd!
     autocmd BufWritePost .vimrc source %
@@ -263,6 +136,112 @@ augroup indentation
     autocmd FileType blade setlocal shiftwidth=4 softtabstop=4 expandtab
     autocmd FileType snippets setlocal shiftwidth=4 softtabstop=4
 augroup END
+
+"--- Plugins ---
+
+"/
+"/ CtrlP
+"/
+let g:ctrlp_extensions = ['tag']
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+let g:ctrlp_user_command = [
+    \ '.git', 'cd %s && git ls-files . -co --exclude-standard',
+    \ 'find %s -type f'
+    \ ]
+" Move the CtrlP window.
+" Place at the top, order top to bottom, at least 1, maximum 30, always
+" display 30 columns
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:15'
+let g:ctrlp_buftag_types = {
+    \ 'erlang'     : '--language-force=erlang --erlang-types=drmf',
+    \ 'elixir'     : '--language-force=elixir --elixir-types=drmf',
+    \ }
+
+" Open CtrlP in BufTag mode.
+" Allows for searching buffer for tags.
+nmap <leader>cpt :CtrlPBufTag<CR>
+
+" Open CtrlP Most Recently used.
+nmap <leader>cpr :CtrlPMRUFiles<cr>
+
+"/
+"/ NERDTree
+"/
+" Open NERDTree
+nmap <leader>k :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+let NERDTreeHijackNetrw = 0
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowBookmarks=1
+let g:NERDTreeWinSize=40
+
+"/
+"/ Vim-Lightline
+"/
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
+"/
+"/ ALE
+"/
+let g:ale_enabled=1
+let g:ale_fix_on_save=1
+let g:ale_lint_on_save=1
+let g:ale_completion_enabled=1
+let g:ale_set_loclist=1
+let g:ale_set_signs=1
+
+let g:ale_linters = {
+\   'css': ['eslint'],
+\   'elixir': ['elixir-ls', 'credo'],
+\   'javascript': ['eslint'],
+\   'php': ['phpcs'],
+\   'python': ['pylint'],
+\   'yml': ['yamllint'],
+\   'vue': ['eslint'],
+\}
+
+let g:ale_fixers = {
+\   'elpylintixir': ['mix_format'],
+\   'python': ['autopep8'],
+\   'ruby': ['standardrb'],
+\}
+
+" Required, tell ALE where to find Elixir LS
+let g:ale_elixir_elixir_ls_release = expand("~/GitHub/elixir-ls/rel")
+
+nnoremap <leader>adt :ALEGoToDefinition<cr>
+nnoremap <leader>adh :ALEHover<cr>
+nnoremap <leader>add :ALEDetail<cr>
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
+nmap <silent> <leader>af :ALEFix<cr>
+
+"/
+"/ Vim-Test
+"/
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
+
+let test#php#phpunit#options=''
+let test#php#phpunit#executable="make phpunit"
+
+"/
+"/ Vim-debug
+"/
+let g:vdebug_options = {}
+let g:vdebug_options['server'] = 'localhost'
+let g:vdebug_options['port'] = 9003
+let g:vdebug_options['timeout'] = 20
+let g:vdebug_options['path_maps'] = {
+    \ '/var/www' : getcwd(),
+\ }
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
