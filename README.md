@@ -10,22 +10,27 @@ Clone this repo with the `--recurse-submodules`.
 
 I use the vim 8 package manager to load packages.
 
-### Set up
+## Usage
 
-After cloning this repo, set up a symlink for the `vim/` and `vimrc`.
+The easiest way to use this repo is to clone it locally and then set up
+symlinks.
 
-- `ln -sf <path to>/dot-files/vim ~/.vim`
-- install [elixir-ls](https://github.com/elixir-lsp/elixir-ls)
-- Update vimrc@L153 to point to elixir-ls installation.
-- `ln -sf <path-to>/dot-files/vim/vimrc ~/.vimrc`
+Examples:
 
+```bash
+# Link .vimrc to vimrc in dot-files
+ln -s $PATH_TO_REPO/vim/vimrc ~/.vimrc
+
+# Link vim/plugins to start up plugins
+ln -s $PATH_TO_REPO/vim/plugins/* ~/.vim/pack/dot-files/start
+```
 
 ### Plugins
 Here are the plugins I use:
 
 #### Visual
 
-- [Solarized8](https://github.com/lifepillar/vim-solarized8.git)
+- [Vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 #### Navigation
 
