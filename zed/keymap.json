@@ -1,1 +1,128 @@
-/Users/samuelwillis/.config/zed/keymap.json
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {},
+  },
+  // Bind `tab` back to its original behavior.
+  {
+    "context": "Editor",
+    "bindings": {
+      "tab": "editor::Tab",
+    },
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "alt-tab": "editor::AcceptEditPrediction",
+    },
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "tab": "editor::ComposeCompletion",
+    },
+  },
+  {
+    "context": "(VimControl && !menu) || vim_mode == replace || vim_mode == waiting",
+    "bindings": {
+      "tab": "vim::Tab",
+    },
+  },
+  {
+    "context": "vim_mode == literal",
+    "bindings": {
+      "tab": ["vim::Literal", ["tab", "\u0009"]],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space a": "agent::ToggleFocus",
+      "space b": "editor::ToggleBreakpoint",
+      "space d": "debug_panel::ToggleFocus",
+      "space e": "project_panel::ToggleFocus",
+      "space g": "git_panel::ToggleFocus",
+      "space r": "editor::RestartLanguageServer",
+      "space t": "terminal_panel::ToggleFocus",
+      "space x": "diagnostics::Deploy",
+      "[ [": "pane::SwapItemLeft",
+      "] ]": "pane::SwapItemRight",
+    },
+  },
+  {
+    // editor binds
+    "context": "Pane || Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-l": "pane::ActivateNextItem",
+      "ctrl-h": "pane::ActivatePreviousItem",
+    },
+  },
+  {
+    // pane & navigation binds
+    "context": "Pane || ProjectPanel || Terminal || (Assistant && vim_mode == normal)|| (Editor && vim_mode == normal)",
+    "bindings": {
+      // pane tab navigation
+      "ctrl-q": "pane::CloseActiveItem",
+      // workspace panel navigation
+      "alt-h": "workspace::ActivatePaneLeft",
+      "alt-l": "workspace::ActivatePaneRight",
+      "alt-k": "workspace::ActivatePaneUp",
+      "alt-j": "workspace::ActivatePaneDown",
+      // splitting
+      "ctrl-t k": "pane::SplitUp",
+      "ctrl-t j": "pane::SplitDown",
+      "ctrl-t h": "pane::SplitLeft",
+      "ctrl-t l": "pane::SplitRight",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": "workspace::NewTerminal",
+    },
+  },
+  {
+    "context": "Terminal && !vi_mode",
+    "bindings": {
+      "escape": "terminal_panel::ToggleFocus",
+      "shift-space": "terminal::ToggleViMode",
+    },
+  },
+  {
+    "context": "Terminal && vi_mode",
+    "bindings": {
+      "escape": "terminal::ToggleViMode",
+    },
+  },
+  {
+    "context": "DebugPanel",
+    "bindings": {
+      "escape": "debug_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "escape": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "escape": "agent::ToggleFocus",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "escape": "project_panel::ToggleFocus",
+    },
+  },
+]
