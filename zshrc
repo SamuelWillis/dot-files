@@ -1,20 +1,25 @@
-# --- Work Utilities ---
+# https://helix-editor.com/
+export EDITOR='hx'
 
-# CD alias' for Phoenix
-alias phx="cd ~/GitHub/phoenix"
-alias phxfe="cd ~/GitHub/phoenix/resources/js/phoenix"
-alias phxbe="cd ~/GitHub/phoenix/resources/js/beacon"
-alias phxatl="cd ~/GitHub/phoenix/resources/js/atlas"
-alias phxcyp="cd ~/GitHub/phoenix/cypress"
+# Export PATH
+export PATH="$HOME/.local/bin:$PATH"
 
-# NPM install alias' for Phoenix
-alias phx_npm="(phx && npm install)"
-alias phxfe_npm="(phxfe && npm install)"
-alias phxbe_npm="(phxbe && npm install)"
-alias phxatl_npm="(phxatl & npm install)"
-alias phxcyp_npm="(phxcyp && npm install)"
-alias phxall_npm="(phx_npm && phxfe_npm && phxbe_npm && phxatl_npm && phxcyp_npm)"
+# Auto start a zellij... Disabled for now
+# https://zellij.dev/documentation/introduction.html
+# eval "$(zellij setup --generate-auto-start zsh)"
 
-function phxgrep() {
- grep -R --exclude=\*mock-report-data.js --exclude=\*.generated.js --exclude=\*.eslintcache --exclude-dir=node_modules --exclude-dir=__tests__ "$@"
-}
+# Activate Starship, installed via brew.
+# Configured with pure prompt preset.
+# https://starship.rs/guide/
+eval "$(starship init zsh)"
+
+# Activate zsh, makes it available to helix.
+# https://mise.jdx.dev/demo.html
+eval "$(mise activate zsh)"
+
+# Enable zsh-autosuggestions, installed via brew
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+# ZELLIJ alias'
+alias zhx="zellij -l hack"

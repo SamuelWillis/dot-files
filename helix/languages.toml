@@ -1,0 +1,25 @@
+[language-server.dexter]
+command = "dexter"
+args = ["lsp"]
+
+[[language]]
+name = "elixir"
+scope = "source.elixir"
+injection-regex = "elixir"
+file-types = ["ex", "exs", "heex"]
+roots = ["mix.exs"]
+diagnostic-severity = "hint"
+comment-token = "#"
+indent = {tab-width = 2, unit = " "}
+language-servers = ["dexter"]
+auto-format = false
+formatter = { command = "mix", args = ["format", "-"] }
+
+[[language]]
+name="kdl"
+language-id = "kdl"
+auto-format = true
+
+[[language]]
+name = "git-commit"
+rulers = [50, 72]

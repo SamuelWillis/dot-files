@@ -1,0 +1,36 @@
+theme = "rose_pine_dawn"
+
+[keys.normal]
+
+# Utility
+space.x = ":bc!"
+"ret" = "goto_word"
+space.space.c.o = ":config-open"
+space.space.c.r = ":config-reload"
+space.space.c.l = ":open ~/.config/helix/languages.toml"
+space.space.l.o = ":sh zellij action new-pane --close-on-exit -f -- tail -f ~/.cache/helix/helix.log"
+# g.d = ["goto_definition", "vsplit"]
+g.v.d = ["vsplit", "jump_view_up", "goto_definition"]
+
+# Git
+# space.space.h.h = ":sh zellij action new-pane  --close-on-exit -f --height 80%% --width 80%% -y 10%% -x 10%% -- mise x -- lazygit log -f %{buffer_name}"
+
+# AI
+
+# Convenience
+space.space.D = "@:sh rm <C-r>%"
+
+# Elixir / Mix
+space.space.m.c = ":sh mix compile"
+space.space.m.f = ":sh mix format"
+space.space.m.C = ":sh zellij action new-pane  -f -- mise x -- mix credo"
+space.space.m.t = ":sh zellij action new-pane  -f -- mise x -- mix test %{buffer_name} --trace"
+space.space.m.T = ":sh zellij action new-pane  -f -- mise x -- mix test %{buffer_name}:%{cursor_line} --trace"
+space.space.m.d = ":sh zellij action new-pane  -f -- mise x -- iex --dbg pry -S mix test %{buffer_name}:%{cursor_line} --trace"
+space.space.m.s = ":sh zellij action new-pane  -f -- mise x -- iex --dbg pry -S mix "
+
+# Front End / PNPM
+space.space.p.i = ":sh zellij action new-pane -f -- mise x -- pnpm install"
+space.space.p.f = ":sh zellij action new-pane -f -- mise x -- pnpm lint --fix"
+space.space.p.g = ":sh zellij action new-pane -f -- mise x -- pnpm gql"
+

@@ -1,0 +1,27 @@
+layout {
+  pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    pane split_direction="vertical" {
+          pane size="65%" {
+            name "helix"
+            command "hx"
+            args "."
+            focus true
+        }
+        pane split_direction="horizontal" {
+            pane {
+                name "claude"
+                command "claude"
+                start_suspended true
+            }
+            pane split_direction="vertical" size="20%" {
+            	name "zsh"
+        
+            } 
+        }
+    }
+    pane split_direction="vertical" size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+}
