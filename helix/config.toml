@@ -1,4 +1,5 @@
-theme = "rose_pine_dawn"
+# Match theme to the terminal theme
+theme = "base16_terminal"
 
 [keys.normal]
 
