@@ -1,9 +1,12 @@
-# https://helix-editor.com/
-export EDITOR='hx'
-
 # Export PATH
 export PATH="$HOME/.local/bin:$PATH"
 
+# Set Helix to default editor, installed via brew.
+# https://helix-editor.com/
+export EDITOR='hx'
+
+# Zellij, installed via brew
+alias zhx="zellij -l hack"
 # Auto start a zellij... Disabled for now
 # https://zellij.dev/documentation/introduction.html
 # eval "$(zellij setup --generate-auto-start zsh)"
@@ -19,7 +22,3 @@ eval "$(mise activate zsh)"
 
 # Enable zsh-autosuggestions, installed via brew
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-
-# ZELLIJ alias'
-alias zhx="zellij -l hack"
